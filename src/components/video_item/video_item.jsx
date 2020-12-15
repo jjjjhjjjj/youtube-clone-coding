@@ -6,11 +6,7 @@ const VideoItem = (props) => {
   return (
     <li className={styles.container}>
       <div className={styles.video}>
-        <img
-          className={styles.thumbnail}
-          src={thumbnails.standard.url}
-          alt=""
-        />
+        <img className={styles.thumbnail} src={thumbnails.medium.url} alt="" />
         <div className={styles.content}>
           <strong className={styles.title}>{title}</strong>
           <p className={styles.channelTitle}>{channelTitle}</p>
