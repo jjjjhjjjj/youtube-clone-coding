@@ -1,10 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./video_item.module.css";
 
-const VideoItem = (props) => {
+const VideoItem = memo((props) => {
   const { thumbnails, title, channelTitle } = props.video.snippet;
+  const listType = props.viewVideo ? styles.col : styles.grid;
   return (
-    <li className={styles.container}>
+    <li
+      className={`${styles.container} ${listType}`}
+      onClick={() => props.onView(props.video)}
+    >
       <div className={styles.video}>
         <img className={styles.thumbnail} src={thumbnails.medium.url} alt="" />
         <div className={styles.content}>
@@ -14,6 +18,6 @@ const VideoItem = (props) => {
       </div>
     </li>
   );
-};
+});
 
 export default VideoItem;

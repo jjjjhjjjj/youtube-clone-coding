@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, memo } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = (props) => {
+const SearchHeader = memo((props) => {
   const formRef = useRef();
   const inputRef = useRef();
 
@@ -19,7 +19,7 @@ const SearchHeader = (props) => {
   };
   return (
     <header className={styles.header}>
-      <h1 className={styles.logoBox}>
+      <h1 className={styles.logoBox} onClick={() => props.onUnView()}>
         <img className={styles.logoImg} src="../images/logo.png" alt="" />
         <strong className={styles.logoTitle}>Youtube</strong>
       </h1>
@@ -40,6 +40,6 @@ const SearchHeader = (props) => {
       </form>
     </header>
   );
-};
+});
 
 export default SearchHeader;

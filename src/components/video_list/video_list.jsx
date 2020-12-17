@@ -6,7 +6,12 @@ const VideoList = (props) => {
   return (
     <ul className={styles.list}>
       {props.videos.map((video) => (
-        <VideoItem key={video.id} video={video} />
+        <VideoItem
+          key={video.id}
+          video={video}
+          onView={props.onView}
+          viewVideo={props.viewVideo}
+        />
       ))}
     </ul>
   );
